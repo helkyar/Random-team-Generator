@@ -1,0 +1,47 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* ------------------------------------------------ */
+.input,
+.participants,
+.create {
+  margin-top: 2rem;
+}
+.input {
+  flex-grow: 1;
+  width: 45%;
+}
+form {
+  margin-left: 2rem;
+}
+label {
+  margin-top: 0.5rem;
+  display: inline-block;
+  width: 3rem;
+}
+.participants {
+  flex-grow: 1;
+  width: 45%;
+  overflow: auto;
+  max-height: 185px;
+}
+.partc-name {
+  margin-left: 2rem;
+}
+.clear {
+  margin-left: 0.75rem;
+  margin-top: 0.5rem;
+}
+/* ------------------------------------------------ */
+.team {
+  margin-top: 2rem;
+  width: 100%;
+  min-height: 300px;
+  border: 1px solid #000;
+}
+.team-div {
+  margin: 1rem 2rem;
+  border: 1px solid #000;
+  padding: 0.5rem;
+}
