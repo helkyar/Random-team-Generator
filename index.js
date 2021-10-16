@@ -1,2 +1,0 @@
-// Basura de programación
-// Misisisisisis
