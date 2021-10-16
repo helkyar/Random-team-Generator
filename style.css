@@ -8,6 +8,7 @@ body {
 .create {
   margin-top: 2rem;
 }
+/* ------------------------------------------------ */
 .input {
   flex-grow: 1;
   width: 45%;
@@ -20,6 +21,12 @@ label {
   display: inline-block;
   width: 3rem;
 }
+/* ------------------------------------------------- */
+.clear {
+  margin-left: 0.75rem;
+  margin-top: 0.5rem;
+}
+/* ------------------------------------------------- */
 .participants {
   flex-grow: 1;
   width: 45%;
@@ -29,10 +36,10 @@ label {
 .partc-name {
   margin-left: 2rem;
 }
-.clear {
-  margin-left: 0.75rem;
-  margin-top: 0.5rem;
+.partc-name button {
+  margin-right: 0.5rem;
 }
+
 /* ------------------------------------------------ */
 .team {
   margin-top: 2rem;
