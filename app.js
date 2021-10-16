@@ -24,10 +24,12 @@ create.addEventListener('click', createTeam);
 
 function addToList(e) {
   e.preventDefault();
-  players.innerHTML += `<p class="partc-name">${input.value}</p>`;
-  playerList.push(input.value);
-  input.value = '';
-  infoUpdate();
+  if (input.value) {
+    players.innerHTML += `<p class="partc-name">${input.value}</p>`;
+    playerList.push(input.value);
+    input.value = '';
+    infoUpdate();
+  }
 }
 
 function createTeam() {
