@@ -11,11 +11,10 @@ body {
 /* ------------------------------------------------ */
 .input {
   flex-grow: 1;
-  width: 45%;
+  width: 30%;
+  padding-left: 2rem;
 }
-form {
-  margin-left: 2rem;
-}
+
 label {
   margin-top: 0.5rem;
   display: inline-block;
@@ -28,12 +27,16 @@ label {
 }
 /* ------------------------------------------------- */
 .participants {
+  padding-left: 5rem;
   flex-grow: 1;
   width: 45%;
   overflow: auto;
   max-height: 185px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .partc-name {
+  flex-basis: 150px;
   margin-left: 2rem;
 }
 .partc-name button {
@@ -55,4 +58,7 @@ label {
   margin: 1rem 2rem;
   border: 1px solid #000;
   padding: 0.5rem;
+}
+.drag {
+  background-color: greenyellow;
 }
