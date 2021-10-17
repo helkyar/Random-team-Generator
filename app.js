@@ -37,9 +37,9 @@ function addToList(e) {
     players.innerHTML += `<p class="partc-name"><button>
     <img src="img/trash.png" alt="" /></button>${input.value} </p>`;
     input.value = '';
-    playerList = document.querySelectorAll('.partc-name');
-    infoUpdate(playerList.length);
   }
+  playerList = document.querySelectorAll('.partc-name');
+  infoUpdate(playerList.length);
 }
 
 function createTeam() {
@@ -72,7 +72,7 @@ function createTeam() {
 // Extras
 // ============================================================================================
 clear.addEventListener('click', empty);
-size.addEventListener('input', infoUpdate);
+size.addEventListener('input', (e) => addToList(e)); // calling infoUpdate through addToList to update playerList (number of players)
 players.addEventListener('click', (e) => remove(e));
 distribution.addEventListener('click', changeDist);
 teams.addEventListener('click', (e) => changeMember(e));
@@ -83,7 +83,7 @@ function empty() {
 }
 
 function infoUpdate(members) {
-  let realSize = size.value || 2;
+  let realSize = parseInt(size.value) || 2;
   infMemb.innerText = `Memb.: ${members}`;
   infTeam.innerText = `Teams: ${Math.ceil(members / realSize)}`;
 }
