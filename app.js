@@ -160,4 +160,5 @@ function changeMember(e) {
     draged.innerText = e.target.innerText;
     e.target.innerText = t;
   }
+  localStorage.setItem('teams', teams.innerHTML);
 }
