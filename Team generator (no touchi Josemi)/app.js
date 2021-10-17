@@ -66,27 +66,17 @@ function bulkT() {
 
 function uniformT() {
   let random = randomArr();
-  let array = [];
   let teamNumb = Math.ceil(members.length / sizeNow);
 
   for (let a = 0; a < members.length; a++) {
-    let j = Math.floor(a / teamNumb);
-    if (j == 0) {
-      array.push([members[a].innerText]);
+    if (Math.floor(a / teamNumb) == 0) {
+      teamsDiv.innerHTML += `<div class='team-div'><strong>Team${a}</strong>
+      <p class='member'>${members[random[a]].innerText}</p></div>`;
     } else {
-      array[a % teamNumb][j] = members[a].innerText;
+      let team = document.querySelectorAll('.team-div');
+      team[a % teamNumb].innerHTML += `<p class='member'>
+      ${members[random[a]].innerText}</p>`;
     }
-  }
-
-  let z = 0;
-  for (let j = 0; j < members.length; z++) {
-    let team = `<strong>Team${z}</strong>`;
-
-    for (let i = 0; i < array[z].length; i++) {
-      if (j == members.length) break;
-      team += `<p class="member">${members[random[j++]].innerText}</p>`;
-    }
-    teamsDiv.innerHTML += `<div class="team-div">${team}</div>`;
   }
   localStorage.setItem('teams', teamsDiv.innerHTML);
   localStorage.setItem('members', membersDiv.innerHTML);
