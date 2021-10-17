@@ -53,9 +53,13 @@ label {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.team::before {
+  content: 'Click to change team members';
+  position: absolute;
+}
 .team-div {
   width: 14rem;
-  margin: 1rem 2rem;
+  margin: 1.5rem 2rem;
   border: 1px solid #000;
   padding: 0.5rem;
 }
