@@ -1,146 +1,133 @@
 // Local storage
 const add = document.querySelector('.add');
 const create = document.querySelector('.create');
+const clear = document.querySelector('.clear');
+const distribution = document.querySelector('.distribution');
 
 let input = document.querySelector('#name');
 let size = document.querySelector('#size');
-let players = document.querySelector('.participants');
-let teams = document.querySelector('.team');
-let playerList;
+let membersDiv = document.querySelector('.participants');
+let teamsDiv = document.querySelector('.team');
+let members = document.querySelectorAll('.partc-name'); //declaring it is enought
 
 // ----------------------------------------------------------------
-const clear = document.querySelector('.clear');
-const distribution = document.querySelector('.distribution');
 let infMemb = document.querySelector('.inf-memb');
 let infTeam = document.querySelector('.inf-teams');
 let uniform = true;
 let drag = false;
-// ----------------------------------------------------------------
+let sizeNow;
 
+// ----------------------------------------------------------------
 let t = localStorage.getItem('teams');
 let m = localStorage.getItem('members');
 if (m && t) {
-  players.innerHTML = m;
-  teams.innerHTML = t;
-  playerList = document.querySelectorAll('.partc-name');
-  infoUpdate(playerList.length);
+  membersDiv.innerHTML = m;
+  teamsDiv.innerHTML = t;
+  infoUpdate();
 }
 
+// ----------------------------------------------------------------
 add.addEventListener('click', (e) => addToList(e));
-create.addEventListener('click', () =>
-  uniform ? uniformTeams() : createTeam()
-);
+create.addEventListener('click', () => (uniform ? uniformT() : bulkT()));
+membersDiv.addEventListener('click', (e) => remove(e));
+clear.addEventListener('click', empty);
+size.addEventListener('input', infoUpdate);
+distribution.addEventListener('click', changeDist);
+teamsDiv.addEventListener('click', (e) => changeMember(e));
 
+// ----------------------------------------------------------------
 function addToList(e) {
   e.preventDefault();
   if (input.value) {
-    players.innerHTML += `<p class="partc-name"><button>
+    membersDiv.innerHTML += `<p class="partc-name"><button class="remove">
     <img src="img/trash.png" alt="" /></button>${input.value} </p>`;
     input.value = '';
   }
-  playerList = document.querySelectorAll('.partc-name');
-  infoUpdate(playerList.length);
+  infoUpdate();
 }
 
-function createTeam() {
-  teams.innerHTML = '';
-  playerList = document.querySelectorAll('.partc-name');
-  let random = [];
-  let number = 0;
-  while (random.length < playerList.length) {
-    do {
-      number = Math.floor(Math.random() * playerList.length);
-    } while (random.includes(number));
-    random.push(number);
-  }
+// ----------------------------------------------------------------
+function bulkT() {
+  let random = randomArr();
 
   let a = 0;
-  let finalsize = parseInt(size.value) || 2;
-  for (let j = 0; j < playerList.length; ) {
-    let team = `<strong>Team${j + a - finalsize * a++}</strong>`;
-    for (let i = 0; i < finalsize; i++) {
-      if (j == playerList.length) break;
-      team += `<p class="member">${playerList[random[j++]].innerText}</p>`;
+  for (let j = 0; j < members.length; a++) {
+    let team = `<strong>Team${a}</strong>`;
+
+    for (let i = 0; i < sizeNow; i++) {
+      if (j == members.length) break;
+      team += `<p class="member">${members[random[j++]].innerText}</p>`;
     }
-    teams.innerHTML += `<div class="team-div">${team}</div>`;
+    teamsDiv.innerHTML += `<div class="team-div">${team}</div>`;
   }
-  localStorage.setItem('teams', teams.innerHTML);
-  localStorage.setItem('members', players.innerHTML);
+  localStorage.setItem('teams', teamsDiv.innerHTML);
+  localStorage.setItem('members', membersDiv.innerHTML);
 }
 
-// ============================================================================================
-// Extras
-// ============================================================================================
-clear.addEventListener('click', empty);
-size.addEventListener('input', (e) => addToList(e)); // calling infoUpdate through addToList to update playerList (number of players)
-players.addEventListener('click', (e) => remove(e));
-distribution.addEventListener('click', changeDist);
-teams.addEventListener('click', (e) => changeMember(e));
+function uniformT() {
+  let random = randomArr();
+  let array = [];
+  let teamNumb = Math.ceil(members.length / sizeNow);
 
-function empty() {
-  players.innerHTML = '';
-  teams.innerHTML = '';
+  for (let a = 0; a < members.length; a++) {
+    let j = Math.floor(a / teamNumb);
+    if (j == 0) {
+      array.push([members[a].innerText]);
+    } else {
+      array[a % teamNumb][j] = members[a].innerText;
+    }
+  }
+
+  let z = 0;
+  for (let j = 0; j < members.length; z++) {
+    let team = `<strong>Team${z}</strong>`;
+
+    for (let i = 0; i < array[z].length; i++) {
+      if (j == members.length) break;
+      team += `<p class="member">${members[random[j++]].innerText}</p>`;
+    }
+    teamsDiv.innerHTML += `<div class="team-div">${team}</div>`;
+  }
+  localStorage.setItem('teams', teamsDiv.innerHTML);
+  localStorage.setItem('members', membersDiv.innerHTML);
 }
 
-function infoUpdate(members) {
-  let realSize = parseInt(size.value) || 2;
-  infMemb.innerText = `Memb.: ${members}`;
-  infTeam.innerText = `Teams: ${Math.ceil(members / realSize)}`;
+function randomArr() {
+  teamsDiv.innerHTML = '';
+  let random = [];
+  while (random.length < members.length) {
+    let number = Math.floor(Math.random() * members.length);
+    if (!random.includes(number)) {
+      random.push(number);
+    }
+  }
+  return random;
 }
 
+// ----------------------------------------------------------------
 function remove(e) {
   if (e.target.tagName == 'BUTTON') {
     e.target.parentElement.remove();
   } else if (e.target.tagName == 'IMG') {
     e.target.parentElement.parentElement.remove();
   }
+  infoUpdate();
 }
 
-function uniformTeams() {
-  let array = [];
-  playerList = document.querySelectorAll('.partc-name');
-  let finalsize = size.value || 2;
-  let numberT = Math.ceil(playerList.length / finalsize);
-  for (let j = 0; j < numberT; j++) {
-    array.push([]);
-  }
-
-  let i = 0;
-  let j = 0;
-  for (let a = 0; a < playerList.length; i++) {
-    if (i == array.length) {
-      i = 0;
-      j++;
-    }
-    array[i][j] = playerList[a++].innerText;
-  }
-
-  teams.innerHTML = '';
-  let random = [];
-  let number = 0;
-  while (random.length < playerList.length) {
-    do {
-      number = Math.floor(Math.random() * playerList.length);
-    } while (random.includes(number));
-    random.push(number);
-  }
-
-  let a = 0;
-  let z = 0;
-  for (let j = 0; j < playerList.length; ) {
-    let team = `<strong>Team${j + a - finalsize * a++}</strong>`;
-
-    for (let i = 0; i < array[z].length; i++) {
-      if (j == playerList.length) break;
-      team += `<p class="member">${playerList[random[j++]].innerText}</p>`;
-    }
-    teams.innerHTML += `<div class="team-div">${team}</div>`;
-    z++;
-  }
-  localStorage.setItem('teams', teams.innerHTML);
-  localStorage.setItem('members', players.innerHTML);
+function empty() {
+  membersDiv.innerHTML = '';
+  teamsDiv.innerHTML = '';
 }
 
+// ----------------------------------------------------------------
+function infoUpdate() {
+  sizeNow = parseInt(size.value) || 2;
+  members = document.querySelectorAll('.partc-name');
+  infMemb.innerText = `Memb.: ${members.length}`;
+  infTeam.innerText = `Teams: ${Math.ceil(members.length / sizeNow)}`;
+}
+
+// ----------------------------------------------------------------
 function changeDist() {
   uniform = !uniform;
   uniform
@@ -155,10 +142,10 @@ function changeMember(e) {
   } else if (e.target.classList.contains('member')) {
     drag = false;
     let draged = document.querySelector('.drag');
-    let t = draged.innerText;
     draged.classList.remove('drag');
+    let t = draged.innerText;
     draged.innerText = e.target.innerText;
     e.target.innerText = t;
   }
-  localStorage.setItem('teams', teams.innerHTML);
+  localStorage.setItem('teams', teamsDiv.innerHTML);
 }
