@@ -10,6 +10,7 @@ solo que sería algo como teams[0] y teams[1].
 Finalmente, la unica forma que se me ocurre para rellenar el array y que cada vez que empieza la vuelta en el segundo bucle no empieze
 de nuevo era añadiendo un contador. Esto de todas formas luego cambiará, porque queremos que se rellene de forma aleatoria y sin repetir nombres.
 */
+
 // let persons = ["Jose", "Javi", "Cristi", "Fernando", "Manoli", "Antonia", "Paco", "Curro", "Francis", "Miguel"];
 // let ppteam = 5;
 // let teams = [];
@@ -40,3 +41,4 @@ randomNum = Math.floor(Math.random() * 10);
 if(!(random.includes(randomNum))){
     random.push(randomNum);
 }
+
