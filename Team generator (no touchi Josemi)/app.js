@@ -107,6 +107,7 @@ function remove(e) {
 function empty() {
   membersDiv.innerHTML = '';
   teamsDiv.innerHTML = '';
+  members = document.querySelectorAll('.partc-name');
 }
 
 // ----------------------------------------------------------------
