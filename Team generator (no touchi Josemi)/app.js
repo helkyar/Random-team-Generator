@@ -1,4 +1,3 @@
-// Local storage
 const add = document.querySelector('.add');
 const create = document.querySelector('.create');
 const clear = document.querySelector('.clear');
@@ -28,6 +27,7 @@ if (m && t) {
 
 // ----------------------------------------------------------------
 add.addEventListener('click', (e) => addToList(e));
+// 3rd Option: push last members into already generated teams if members<size && tunningCondition -> [members<=teams or (membres%teams)<(size/2) or ...]
 create.addEventListener('click', () => (uniform ? uniformT() : bulkT()));
 membersDiv.addEventListener('click', (e) => remove(e));
 clear.addEventListener('click', empty);
