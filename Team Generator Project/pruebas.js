@@ -10,28 +10,33 @@ solo que sería algo como teams[0] y teams[1].
 Finalmente, la unica forma que se me ocurre para rellenar el array y que cada vez que empieza la vuelta en el segundo bucle no empieze
 de nuevo era añadiendo un contador. Esto de todas formas luego cambiará, porque queremos que se rellene de forma aleatoria y sin repetir nombres.
 */
-let persons = ["Jose", "Javi", "Cristi", "Fernando", "Manoli", "Antonia", "Paco", "Curro", "Francis", "Miguel"];
-let ppteam = 5;
-let teams = [];
-let nteams = Math.trunc(persons.length / ppteam);
-let counter = 0;
+// let persons = ["Jose", "Javi", "Cristi", "Fernando", "Manoli", "Antonia", "Paco", "Curro", "Francis", "Miguel"];
+// let ppteam = 5;
+// let teams = [];
+// let nteams = Math.trunc(persons.length / ppteam);
+// let counter = 0;
 
-for(i = 0; i < nteams; i++){
-    teams.push([]);
-}
 
-for(i = 0; i < nteams; i++){
+// for(i = 0; i < nteams; i++){
+//     teams.push([`team ${i+1}`]);
+// }
+
+// for(i = 0; i < nteams; i++){
     
-    for(j = 0; ppteam > j; j++){
-        teams[i].push(persons[counter]);
-        counter++;
-    }
+//     for(j = 0; j < ppteam; j++){
+//         teams[i].push(persons[counter]);
+//         counter++;
+//     }
+// }
+
+// console.log(teams);
+
+
+let random = []
+
+let randomNum;
+
+randomNum = Math.floor(Math.random() * 10);
+if(!(random.includes(randomNum))){
+    random.push(randomNum);
 }
-
-console.log(teams);
-
-
-
-
-
-

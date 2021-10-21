@@ -9,10 +9,10 @@
   </head>
   <body>
 
-    <header id="header">
+    <header class="header">
       <h1><a href="">Team Generator</a></h1>      
-      <nav id="nav">
-        <a href="">Reset</a>
+      <nav class="nav">
+        <input type="reset" value="Reset"></input>
         <a href="">Share this app</a>
       </nav>
     </header>
@@ -22,26 +22,27 @@
       <section>
 
         <article>
-          <h2 id="aa">Insert the names of the members here</h2>
-          <label>Add a name:</label>
-          <input id="membername" type="text" name="membername"  placeholder="Member Name here" autofocus/>
-          <br/>          
-          <label>How many persons per team?</label>
-          <input type="number" name="teambember" placeholder="Persons per team"/>
-          <br/>
-          <input type="button"  name="addmember" value="Add"/>
-          <br/>
-          <input id="clearname" onclick="clearText('membername')" type="button" name="clearname" value="Clear"/>
+          <h2 class="formHeader">Insert the names of the members here</h2>
+
+          <form class= "form">
+            <label for="membername">Add a name:</label>          
+            <input id="membername" type="text" name="membername"  placeholder="Member Name here" autofocus/>                     
+            <label for="members">How many persons per team?</label>
+            <input id="members" type="number" name="teambember" placeholder="Persons per team"/>            
+            <input id= "buttonAdd" type="button"  name="addmember" value="Add"/>            
+            <input id="buttonClear" type="reset" name="clear" value="Clear"/>
+          </form>
+
         </article>
 
         <article>
-          <h2>Name of the members:</h2>
+          <h2>Name of the members:</h2>          
         </article>
 
       </section>
 
       <section>
-
+        
         <article>
           
         </article>
@@ -49,8 +50,6 @@
       </section>
 
     </main>
-
-
 
     <script src="app.js">     
     </script>
