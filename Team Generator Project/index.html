@@ -8,26 +8,31 @@
     <title>Team Generator</title>
   </head>
   <body>
-    <div class="input">
-      <form action="">
-        <label for="name">Name</label>
-        <input type="text" id="name" />
-        <input type="submit" class="add" value="Add" /> <br />
-        <label for="size">Size</label>
-        <input type="number" id="size" />
-      </form>
-      <br />
-      <button class="distribution">Uniform</button>
-    </div>
+    <header>
+      <h1>Team Generator</h1>
+    </header>
+    <main>
+      <section class="input">
+        <form action="">
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+          <input type="submit" class="add" value="Add" />
+          <label for="size">Team size</label>
+          <input type="number" id="size" />
+        </form>
 
-    <div>
-      <button class="create">Generate</button><br />
-      <button class="clear">Clear</button>
-      <p class="inf-teams">Teams: 0</p>
-      <p class="inf-memb"> Memb.: 0</p>
-    </div>
-    <div class="participants"> </div>
-    <div class="team"> </div>
+        <button class="distribution">Uniform</button>
+      </section>
+
+      <section>
+        <button class="create">Generate</button>
+        <button class="clear">Clear</button>
+        <p class="inf-teams">Teams: 0</p>
+        <p class="inf-memb"> Memb.: 0</p>
+      </section>
+      <section class="participants"><h3>Member List: </h3> </section>
+      <section class="team"><h3>Generated Teams: </h3></section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
