@@ -7,6 +7,10 @@
 // ?->Arrastar para cambiar de equipos
 
 //Delete text from inputs
-function clearText(id){
-   document.getElementById(id).value="";
-}
+
+let participants = document.getElementsByClassName("participants");
+let element = document.createElement("p");
+element.innerText = "Josemi";
+console.log(element);
+console.log(participants);
+participants[0].appendChild(element);
