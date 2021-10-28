@@ -1,0 +1,124 @@
+ /* ==================== GENERAL ====================== */
+ body{
+     margin: 0;
+ }
+ h1,h3,h4{
+     text-align: center;
+ }
+ p{
+    margin-top: 0rem;
+    margin-bottom: 0;
+    padding: 0.5rem;
+}
+ img{
+     width: 1rem;
+     margin-bottom: -0.1rem; /* align img with text */
+ }
+ main{
+    display: flex;
+    flex-wrap: wrap;
+ }
+ main section{
+     padding: 1rem 2rem 0.5rem;
+     margin: 0.5rem;
+     border-radius: 10px;
+     border: 0.5px solid
+ }
+ /* ===================== INPUT ======================= */
+ .input{
+     width: 25%;
+     flex-grow: 1;
+    border-color: #298332;
+ }
+ label{
+     width: 7rem;
+     display: inline-block;
+     margin-top: 0.7rem;
+ }
+ input{
+    margin-top: 1rem;
+ }
+ /* ================== CONTROLLER ===================== */
+ .controller{
+    width: 15%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    border-color: #934827;
+ }
+ a{
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.2rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+a:active{
+    transform: scale(0.99);
+}
+ select{
+     margin-top: 1rem;
+ }
+ .inf-memb, .inf-teams{
+     margin: 0;
+     padding-bottom: 0;
+ }
+ .inf-memb{
+    margin-bottom: 0.5rem;
+ }
+ .start{
+background-color: red;
+ }
+ .clear{
+     background-color: black;
+
+ }
+ .save{
+     background-color: green;
+
+ }
+ /* ====================== LIST ======================= */
+ .member-list{
+    width: 30%;
+    flex-grow: 999;
+    border-color: #093943;
+ }
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 15rem;
+}
+.member{
+    margin: 1rem;
+}
+ /* ===================== TEAMS ======================= */
+ .teams{
+    width: 100%;
+ }
+ .teams-wraper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ }
+ .teams-wraper h3{
+     display: block;
+ }
+ .team{
+     margin: 0.7rem 0.5rem;
+     width: 10%;
+     border-radius: 10px;
+     border: 2px solid #612141;
+     background-color: #612141;
+ }
+ h4{
+     margin: 0.7rem 0.5rem 0.4rem;
+ }
+ .team-member-list{
+     text-align: center;
+     background-color: white;
+     border-radius: 0px 0px 10px 10px;
+ }
