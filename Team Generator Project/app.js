@@ -24,8 +24,11 @@ let team = document.querySelector(".team");
 
 let memberInit = memberList.innerHTML;
 
-let membSize;
+let membSize="";
 
+let infTeams = document.querySelector(".inf-teams");
+
+const infTeamsInitial = infTeams.innerHTML;
 const teamInitial = team.innerHTML;
 
 //Create a "p" tag with the content of the "Name" input text and add it to the list of members.
@@ -46,21 +49,25 @@ addButton.addEventListener("click", function (e) {
     //of section wich class is "participants"
     createMember();
   }
+  
 });
 
-//ON CONSTRUCTION Cuando redimensiono el equipo hacia menos de 1 se queda pillado
-teamSize
-.addEventListener("input", function(){    
+//ON CONSTRUCTION Si añado el Team Size primero y luego los nombres, no me genera equipos hasta pinchar en Team Size.
+teamSize.addEventListener("input", function(){    
   team.innerHTML = teamInitial;
-  teamSize
-  .min = 1;
-  if(teamSize
-    .value < 1){
-    teamSize
-    .value = 1;
+  teamSize.min = 1;
+  if(teamSize.value < 1){
+    teamSize.value = "";
   }  
-  for(let i=0; i < membSize.length / teamSize.value; i++){                  
-      team.innerHTML +=`<div>Team ${i+1}</div>`;        
-  };    
+  if(teamSize.value == ""){
+    infTeams.innerHTML = infTeamsInitial;
+  }
+  infTeams.innerHTML = `Teams: ${teamSize.value}`;
+
+  if(membSize.value != ""){
+    for(let i=0; i < membSize.length / teamSize.value; i++){                  
+        team.innerHTML +=`<div>Team ${i+1}</div>`;    
+    }    
+  };     
 
 })
