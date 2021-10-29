@@ -48,7 +48,7 @@ addButton.addEventListener("click", function (e) {
   }  
 });
 
-//ON CONSTRUCTION Si añado el Team Size primero y luego los nombres, no me genera equipos hasta pinchar en Team Size.
+//ON CONSTRUCTION
 teamSize.addEventListener("input", function(){   
   let size = 2;
   let teamDivs = [];  
