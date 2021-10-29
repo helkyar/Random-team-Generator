@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,25 +13,62 @@
     </header>
     <main>
       <section class="input">
+        <h3>Input</h3>
+
         <form action="">
-          <label for="name">Name</label>
+          <label for="name">Member name</label>
           <input type="text" id="name" />
-          <input type="submit" class="add" value="Add" />
+          <input type="submit" class="add" value="+" /> <br>
           <label for="size">Team size</label>
           <input type="number" id="size" />
         </form>
-
-        <button class="distribution">Uniform</button>
       </section>
 
-      <section>
-        <button class="create">Generate</button>
-        <button class="clear">Clear</button>
+      <section class="controller">
+        <h3>Controller</h3>
+        <form action="">
+        <Label>Distribution:</Label>
+        <select name="distribution" id="distribution">
+          <option value="Uniform">Uniform</option>
+          <option value="Bulk">Bulk</option>
+        </select>
+        <br>
+        <Label>Team Name:</Label>
+        <select name="teams-name" id="teams-name">
+          <option value="number">Number</option>
+          <option value="element">Elements</option>
+          <option value="animal">Animals</option>
+          <option value="heroes">Heroes</option>
+          <option value="villains">Villains</option>
+        </select>
+      </form>
         <p class="inf-teams">Teams: 0</p>
         <p class="inf-memb"> Memb.: 0</p>
+        <a class="start">Start</a>
+        <a class="clear">Clear</a>
+        <a class="save">Save</a>
       </section>
-      <section class="participants"><h3>Member List: </h3> </section>
-      <section class="team"><h3>Generated Teams: </h3></section>
+      
+      <section class="member-list"> 
+        <h3>Member List</h3> 
+        <article class="list">
+        <p class="member"><img src="img/trash.svg" alt="delete"> Juan</p>
+      </article>
+      </section>
+
+      <section class="teams">
+        <h3>Generated Teams</h3>
+        <div class="teams-wraper">
+        <article class="team">
+          <h4>Team 1</h4>
+          <div class="team-member-list">
+            <p class="team-member"><img src="img/trash.svg" alt="delete"> Juan</p>
+            <p class="team-member"><strong>???</strong></p>
+          </div>
+        </article>
+      </div>
+      </section>
+
     </main>
     <script src="app.js"></script>
   </body>
