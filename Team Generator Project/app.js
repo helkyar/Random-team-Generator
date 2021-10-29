@@ -1,8 +1,9 @@
 /**
  * KNOWN ISSUES
- * -addmember animation aplias to all all the time
+ * -addmember animation aplias to all all the time (no way arround delte)
+ * -member remove doesn't actualize memberinfo (array doesn't delete)
  */
-
+console.log(elements, animals, heroes, villains);
 let addButton = document.querySelector('.add');
 let teamSize = document.querySelector('#size');
 let nameInput = document.querySelector('#name');
@@ -14,8 +15,8 @@ let memberList = document.querySelector('.list');
 
 let team = document.querySelector('.teams-wraper');
 
-let memberInit = [memberList.innerHTML]; //está vacío al principio
-let teamInitial = team.innerHTML; //está vacío al principio
+let teamInitial = team.innerHTML; //starts empty
+let membersNames = [];
 
 addButton.addEventListener('click', addMember);
 memberList.addEventListener('click', removeMemb);
@@ -26,26 +27,33 @@ function addMember(e) {
   e.preventDefault();
 
   if (nameInput.value != '') {
-    memberInit.push(`<p class="member">
-      <img src="img/trash.svg" alt="delete" />${nameInput.value}</p>`);
+    memberList.innerHTML = '';
+    membersNames.push(nameInput.value);
+
+    for (let member of membersNames) {
+      memberList.innerHTML += `<p class="member">
+      <img src="img/trash.svg" alt="delete" />${member}</p>`;
+    }
 
     nameInput.value = '';
-    memberList.innerHTML = memberInit.join('');
-
     addTeam(); // Actualizar al meter los miembros UE
   }
 }
 
 function removeMemb(e) {
   let paragraf = e.target.parentElement;
+
+  for (let i = 0; i < membersNames.length; i++) {
+    if (membersNames[i].includes(paragraf.innerText)) {
+      membersNames.splice(i, 1);
+      break;
+    }
+  }
+
   if (e.target.tagName == 'IMG') {
     paragraf.remove();
   }
-  memberInit = memberInit.filter((val) => {
-    console.log(val, paragraf.innerText);
-    console.log(val.includes(paragraf.innerText));
-    return !val.includes(paragraf.innerText);
-  });
+
   // remove from array, select player
   infoUpdate(10);
 }
@@ -55,7 +63,7 @@ function addTeam() {
   let teamDivs = [];
 
   teamSize.value > 2 ? (size = teamSize.value) : '';
-  let teamNum = Math.ceil((memberInit.length - 1) / size);
+  let teamNum = Math.ceil(membersNames.length / size);
 
   infoUpdate(teamNum);
   // Meter miembros => ???
@@ -70,7 +78,7 @@ function addTeam() {
 // HELPERS --------------------------------------------
 
 function infoUpdate(teamNum) {
-  members.innerText = `Memb.: ${memberInit.length - 1}`;
+  members.innerText = `Memb.: ${membersNames.length}`;
   infTeams.innerHTML = `Teams: ${teamNum}`;
 }
 
@@ -124,9 +132,13 @@ function remove(e) {
 
 function removeDoc() {
   document.removeEventListener('mousemove', mousemove, true);
-  selected.style.transform = `translateY(0px) translateX(0px)`;
+
+  //avoid console error
+  if (selected) {
+    selected.style.transform = `translateY(0px) translateX(0px)`;
+    selected = '';
+  }
 
   body.classList.remove('unselectable');
-  selected = '';
   drag = false;
 }
