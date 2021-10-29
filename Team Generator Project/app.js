@@ -48,7 +48,7 @@ addButton.addEventListener("click", function (e) {
   }  
 });
 
-//ON CONSTRUCTION
+//ON CONSTRUCTION aaaa
 teamSize.addEventListener("input", function(){   
   let size = 2;
   let teamDivs = [];  
