@@ -69,12 +69,14 @@ header strong:hover::after {
   width: 25%;
   flex-grow: 2;
   border-color: black;
-  background-color: #7efbe0b9;
+  background-color: #856e72ad;
+  /* background-color: #7efbe0b9; */
 }
 .input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #1ba486c4;
+  background-color: #0e0d0dad;
+  /* background-color: #1ba486c4; */
 
   border-radius: 10px 10px 0px 0px;
 }
@@ -82,6 +84,7 @@ header strong:hover::after {
   margin: 1rem 0;
 }
 label {
+  color: white;
   width: 7rem;
   display: inline-block;
   margin-top: 0.7rem;
@@ -103,11 +106,13 @@ input {
   flex-direction: column;
   align-items: center;
   border-color: black;
-  background-color: #aaf3f386;
+  background-color: #6e999986;
+  /* background-color: #aaf3f386; */
 }
 .controller h3 {
   width: calc(100%);
-  background-color: #51d3d3f5;
+  background-color: #2d7a7af5;
+  /* background-color: #51d3d3f5; */
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
@@ -231,7 +236,7 @@ select {
   width: fit-content;
   min-width: 5rem;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 2px solid #82aba1;
   background-color: #82aba1;
 }
@@ -241,14 +246,14 @@ h4 {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .team-member-list {
-  height: 90%;
+  height: auto;
   text-align: center;
   background-color: white;
   border-radius: 0px 0px 10px 10px;
 }
 .team-member {
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
 }
 .unselectable {
   -webkit-user-select: none;
