@@ -70,13 +70,11 @@ header strong:hover::after {
   flex-grow: 2;
   border-color: black;
   background-color: #856e72ad;
-  /* background-color: #7efbe0b9; */
 }
 .input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
   background-color: #0e0d0dad;
-  /* background-color: #1ba486c4; */
 
   border-radius: 10px 10px 0px 0px;
 }
@@ -107,12 +105,10 @@ input {
   align-items: center;
   border-color: black;
   background-color: #6e999986;
-  /* background-color: #aaf3f386; */
 }
 .controller h3 {
   width: calc(100%);
   background-color: #2d7a7af5;
-  /* background-color: #51d3d3f5; */
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
@@ -120,6 +116,7 @@ input {
 
 select {
   border-radius: 10px;
+  text-align: center;
 }
 
 a {
