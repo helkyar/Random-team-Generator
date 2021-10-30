@@ -163,7 +163,13 @@ select {
 }
 .member {
   margin: 1rem;
-  transition: transform 1s ease-in;
+}
+.list input {
+  width: 6rem;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: lightgrey;
+  color: rgb(49, 49, 49);
 }
 
 /* ===================== TEAMS ======================= */

@@ -33,9 +33,14 @@ let membersNames = [];
 let teamDivs = [];
 let savedTeams;
 
+let edited;
+let editing = false;
+let originalName;
+
 getLocalStorage();
 // -------------------------------------------
 addButton.addEventListener('click', addMember);
+memberList.addEventListener('dblclick', editMemb);
 memberList.addEventListener('click', removeMemb);
 teamSize.addEventListener('input', addMockTeam);
 
@@ -69,12 +74,30 @@ function addMember(e) {
     membersNames.push(nameInput.value);
 
     for (let member of membersNames) {
-      memberList.innerHTML += `<p class="member">
-      <img src="img/trash.svg" alt="delete" />${member}</p>`;
+      memberList.innerHTML += `<div class="member">
+      <img src="img/trash.svg" alt="delete" /> <input value="${member}" readonly> </div>`;
     }
 
     nameInput.value = '';
     addMockTeam(); // Actualizar al meter los miembros UE
+  }
+}
+
+function editMemb(e) {
+  if (e.target.tagName == 'INPUT') {
+    removeEdit();
+    editing = true;
+    originalName = e.target.value;
+    edited = e.target;
+    edited.style.backgroundColor = 'white';
+    edited.style.color = 'black';
+    edited.readOnly = false;
+    edited.addEventListener('keydown', (e) => {
+      if (e.key == 'Enter') {
+        // getValue()
+        removeEdit();
+      }
+    });
   }
 }
 
@@ -164,8 +187,8 @@ function saveToStorage() {
 
   let savedMembers = ' ';
   for (let member of membersNames) {
-    savedMembers += `<p class="member">
-      <img src="img/trash.svg" alt="delete" />${member}</p>`;
+    savedMembers += `<div class="member">
+      <img src="img/trash.svg" alt="delete" /> <input value="${member}" readonly> </div>`;
   }
   console.log(savedTeams);
   localStorage.setItem('teams', savedTeams ? savedTeams : '');
@@ -175,6 +198,29 @@ function saveToStorage() {
   localStorage.setItem('membersNames', membersNames);
 }
 // HELPERS --------------------------------------------
+function removeEdit() {
+  if (editing) {
+    edited.style.backgroundColor = 'lightgrey';
+    edited.style.color = 'rgb(49, 49, 49)';
+    edited.readOnly = true;
+    editing = false;
+    if (edited.value.trim() != '') {
+      changeNames(originalName, edited.value);
+    } else {
+      edited.value = originalName;
+    }
+  }
+}
+
+function changeNames(prev, next) {
+  for (let i = 0; i < membersNames.length; i++) {
+    if (membersNames[i].trim() == prev.trim()) {
+      membersNames[i] = next;
+      break;
+    }
+  }
+  addMockTeam();
+}
 
 function infoUpdate(teamNum, membNum = membersNames.length) {
   members.innerText = `Memb.: ${membNum}`;
@@ -255,7 +301,7 @@ function remove(e) {
 
 function removeDoc() {
   document.removeEventListener('mousemove', mousemove, true);
-
+  removeEdit(); //couldn't get "onblur" to work
   //avoid console error
   if (selected) {
     selected.style.transform = `translateY(0px) translateX(-0.5px)`;
