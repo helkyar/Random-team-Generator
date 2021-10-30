@@ -46,15 +46,17 @@ retrieve.addEventListener('click', getLocalStorage);
 // ======================================================
 
 function getLocalStorage() {
-  if (localStorage.getItem('members') != null) {
-    let m = localStorage.getItem('members');
+  let m = localStorage.getItem('members');
+
+  if (m != null && m != ' ') {
     let t = localStorage.getItem('teams');
     let nT = localStorage.getItem('numbTeams');
     let nM = localStorage.getItem('numbMembers');
     membersNames = localStorage.getItem('membersNames').split(',');
 
     memberList.innerHTML = m;
-    t == 'undefined' ? addMockTeam() : (team.innerHTML = t);
+    membersNames[0].trim() ? membersNames : (membersNames = []);
+    t == '' ? addMockTeam() : (team.innerHTML = t);
     infoUpdate(nT, nM);
   }
 }
@@ -160,13 +162,13 @@ function saveToStorage() {
     saveMsg.classList.remove('show');
   }, 1200);
 
-  let savedMembers = '';
+  let savedMembers = ' ';
   for (let member of membersNames) {
     savedMembers += `<p class="member">
       <img src="img/trash.svg" alt="delete" />${member}</p>`;
   }
-
-  localStorage.setItem('teams', savedTeams);
+  console.log(savedTeams);
+  localStorage.setItem('teams', savedTeams ? savedTeams : '');
   localStorage.setItem('members', savedMembers);
   localStorage.setItem('numbTeams', teamDivs.length); //
   localStorage.setItem('numbMembers', membersNames.length);

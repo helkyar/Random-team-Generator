@@ -163,6 +163,7 @@ select {
 }
 .member {
   margin: 1rem;
+  transition: transform 1s ease-in;
 }
 
 /* ===================== TEAMS ======================= */
