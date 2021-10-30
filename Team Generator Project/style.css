@@ -202,8 +202,10 @@ select {
 }
 .team {
   margin: 0.7rem 0.5rem;
-  width: 10%;
+  width: fit-content;
+  min-width: 5rem;
   border-radius: 10px;
+  overflow: hidden;
   border: 2px solid #82aba1;
   background-color: #82aba1;
 }
@@ -213,6 +215,7 @@ h4 {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .team-member-list {
+  height: 90%;
   text-align: center;
   background-color: white;
   border-radius: 0px 0px 10px 10px;

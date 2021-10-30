@@ -8,6 +8,9 @@
  * (~v)->Interrogansts move 
  * 
  * ->Clear modal: cat that eats the screen
+ * 
+      // indefined in save + refresh + change team name
+      let teamMemberList = document.querySelectorAll('.team-member-list');
 
  */
 
@@ -33,6 +36,7 @@ let team = document.querySelector('.teams-wraper');
 let membersNames = [];
 let teamDivs = [];
 let savedTeams;
+let teamNumb;
 
 let edited;
 let editing = false;
@@ -69,6 +73,7 @@ function getLocalStorage() {
     membersNames = localStorage.getItem('membersNames').split(',');
 
     memberList.innerHTML = m;
+    teamNumb = nT;
     membersNames[0].trim() ? membersNames : (membersNames = []);
     t == '' ? addMockTeam() : (team.innerHTML = t);
     infoUpdate(nT, nM);
@@ -192,13 +197,14 @@ function newLabel() {
 // =============== GENERATE TEAMS ======================================================
 function generateTeams() {
   let teamRand;
+  team.innerHTML = '';
   let teamNames = pickTeamArray();
+  teamDivs.length > 0 ? (teamNumb = teamDivs.length) : '';
+
   if (teamNames) {
-    teamRand = randomArr(teamDivs.length, teamNames.length);
+    teamRand = randomArr(teamNumb, teamNames.length);
   }
   let random = randomArr(membersNames.length, membersNames.length);
-  let teamNumb = teamDivs.length;
-  team.innerHTML = '';
 
   for (let a = 0; a < membersNames.length; a++) {
     if (Math.floor(a / teamNumb) == 0) {
