@@ -10,10 +10,12 @@
   </head>
   <body>
     <header>
-      <h1>TEAM GENERATOR</h1>
+      <h1>TEAM GENERATOR <strong>&#8615;</strong></h1>
     </header>
+
+    <!-- /* ===================== INPUT ======================= */ -->
     <main>
-      <section class="input">        
+      <section class="input">
         <h3>Insert Name</h3>
         <form action="">
           <label for="name">Member name</label>
@@ -23,17 +25,18 @@
           <input type="number" id="size" />
         </form>
       </section>
-
+      <!-- /* ================== CONTROLLER ===================== */ -->
       <section class="controller">
         <h3>Controller</h3>
         <form action="">
           <label>Distribution:</label>
           <select name="distribution" id="distribution">
-            <option value="Uniform">Uniform</option>
-            <option value="Bulk">Bulk</option>
+            <option value="noalone">No alone</option>
+            <option value="teamnum">Nº Teams</option>
           </select>
           <br />
           <label>Team Name:</label>
+
           <select name="teams-name" id="teams-name">
             <option value="number">Number</option>
             <option value="element">Elements</option>
@@ -48,17 +51,18 @@
         <a class="clear">Clear</a>
         <a class="save">Save</a>
       </section>
-
+      <!-- /* ====================== LIST ======================= */ -->
       <section class="member-list">
         <h3>Member List</h3>
         <article class="list"> </article>
       </section>
-
+      <!-- /* ===================== TEAMS ======================= */ -->
       <section class="teams">
         <h3>Generated Teams</h3>
         <div class="teams-wraper"></div>
       </section>
     </main>
+    <div class="saved">Saved!</div>
     <script src="teamNames.js"></script>
     <script src="app.js"></script>
   </body>

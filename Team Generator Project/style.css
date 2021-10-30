@@ -13,13 +13,13 @@ h3, h4{
   color:rgb(255, 255, 255);
 }
 
-header h1{
+header h1 {
   background-color: #05050554;
   padding: 2rem;
   margin: 0;
   color: #ffffff;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 p {
   margin-top: 0rem;
@@ -43,22 +43,29 @@ main section {
   border-radius: 10px;
   border: 0.5px solid;
 }
+header strong {
+  margin-left: 1rem;
+  background-color: aqua;
+  border-radius: 50%;
+  padding: 0 1rem;
+  cursor: pointer;
+}
 
 /* ===================== INPUT ======================= */
 .input {
   width: 25%;
   flex-grow: 1;
   border-color: black;
-  background-color: #B8E1FF;  
+  background-color: #b8e1ff;
 }
-.input h3{
+.input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #0a99ff81;  
-  
-  border-radius: 10px 10px 0px 0px;  
+  background-color: #0a99ff81;
+
+  border-radius: 10px 10px 0px 0px;
 }
-.input form{
+.input form {
   margin: 1rem 0;
 }
 label {
@@ -77,15 +84,15 @@ input {
   flex-direction: column;
   align-items: center;
   border-color: black;
-  background-color: #B8E1FF;
+  background-color: #b8e1ff;
 }
-.controller h3{    
+.controller h3 {
   width: calc(100%);
-  
-  background-color: #0a99ff81;  
+
+  background-color: #0a99ff81;
   margin: -1rem 0 0;
   padding: 2rem 2rem;
-  border-radius: 10px 10px 0px 0px;  
+  border-radius: 10px 10px 0px 0px;
 }
 a {
   width: 100%;
@@ -96,7 +103,7 @@ a {
   color: white;
   font-weight: bold;
   text-align: center;
-  cursor:pointer;
+  cursor: pointer;
 }
 a:active {
   transform: scale(0.95);
@@ -117,24 +124,37 @@ select {
   background-color: red;
 }
 .clear {
+  transition: transform 1s ease-in;
   background-color: black;
 }
 .save {
   background-color: green;
 }
-
+.saved {
+  transition: ease-in-out 1s transform;
+  padding: 1rem 10rem;
+  border-radius: 10rem;
+  font-weight: bold;
+  position: fixed;
+  top: -5rem;
+  left: calc(45% - 5rem);
+  background-color: lawngreen;
+}
+.show {
+  transform: translateY(10rem);
+}
 /* ====================== LIST ======================= */
 .member-list {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
-  background-color: #E8AEB7;
+  background-color: #e8aeb7;
 }
-.member-list h3{
+.member-list h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #D26071;
-  border-radius: 10px 10px 0px 0px; 
+  background-color: #d26071;
+  border-radius: 10px 10px 0px 0px;
 }
 .list {
   display: flex;
@@ -145,18 +165,24 @@ select {
 .member {
   margin: 1rem;
 }
+.list input {
+  width: 6rem;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: lightgrey;
+  color: rgb(49, 49, 49);
+}
 
 /* ===================== TEAMS ======================= */
 .teams {
   width: 100%;
-  background-color: #B0FCC1;
+  background-color: #b0fcc1;
 }
-.teams h3{
-  background-color: #82ABA1;
+.teams h3 {
+  background-color: #82aba1;
   margin: -1rem -2rem 0;
   padding: 2rem 0;
   border-radius: 10px 10px 0px 0px;
-
 }
 .teams-wraper {
   display: flex;
@@ -170,13 +196,13 @@ select {
   margin: 0.7rem 0.5rem;
   width: 10%;
   border-radius: 10px;
-  border: 2px solid #82ABA1;
-  background-color: #82ABA1;
+  border: 2px solid #82aba1;
+  background-color: #82aba1;
 }
 h4 {
   margin: 0.7rem 0.5rem 0.4rem;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .team-member-list {
   text-align: center;
@@ -196,3 +222,61 @@ h4 {
 }
 
 /* ============================ ANIMATIONS ================================ */
+
+/*span {
+  animation: new 1s infinite;
+  transition: transform 1s ease-in;
+}
+@keyframes new {
+  0% {
+    transform: scale(100);
+  }
+  100% {
+    transform: scale(0);
+  }
+} */
+.expand {
+  transform: scale(100);
+}
+.contract {
+  transform: scale(1);
+}
+.team .tick {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0.2px, 0.2px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.2px, -2px) rotate(-1deg);
+  }
+  /* 20% {
+    transform: translate(-1px, 0px) rotate(1deg);
+  } */
+  30% {
+    transform: translate(1px, 0.5px) rotate(0deg);
+  }
+  /* 40% {
+    transform: translate(0.2px, -0.2px) rotate(1deg);
+  } */
+  50% {
+    transform: translate(-0.2px, 2px) rotate(-1deg);
+  }
+  /* 60% {
+    transform: translate(-1px, 0.2px) rotate(0deg);
+  } */
+  70% {
+    transform: translate(1px, 0.2px) rotate(-1deg);
+  }
+  /* 80% {
+    transform: translate(-0.2px, -0.2px) rotate(1deg);
+  } */
+  90% {
+    transform: translate(0.2px, 0.5px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.2px, -0.5px) rotate(-1deg);
+  }
+}
