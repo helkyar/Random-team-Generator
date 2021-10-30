@@ -125,7 +125,7 @@ a {
   margin-top: 0.5rem;
   border-radius: 10px;
   border: none;
-  color: white;
+  color: black;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
@@ -144,14 +144,14 @@ select {
   font-size: 0.9rem;
 }
 .start {
-  background-color: #9c4b4b;
+  background-color: #F6F6F6;
 }
 .clear {
   transition: ease-in 1s transform;
-  background-color: #0e0d0dad;
+  background-color: #F6F6F6;
 }
 .save {
-  background-color: #33cc7a;
+  background-color: #F6F6F6;
 }
 .saved {
   transition: ease-in-out 1s transform;
