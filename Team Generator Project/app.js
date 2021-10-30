@@ -126,11 +126,11 @@ function addMockTeam() {
   }
 
   for (let i = 0; i < teamNum; i++) {
-    teamDivs.push(`<article class="team" style="border: 2px solid 
+    teamDivs.push(`<article class="team team-mock" style="border: 2px solid 
     #${112141 + 400 * i}; background-color: #${112141 + 400 * i};"> 
-    <h4 class="tick"><strong>???</strong></h4>
+    <h4><p class="tick1">?</p><p class="tick2">?</p><p class="tick3">?</p></h4>
     <div class="team-member-list">
-    <p class="tick"><strong>???</strong></p>
+    <p class="tick1">?</p><p class="tick2">?</p><p class="tick3">?</p>
     </div></article>`);
   }
   team.innerHTML = teamDivs.join('');
