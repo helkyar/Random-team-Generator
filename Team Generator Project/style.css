@@ -49,6 +49,19 @@ header strong {
   border-radius: 50%;
   padding: 0 1rem;
   cursor: pointer;
+  position: relative;
+}
+header strong::after {
+  content: 'retrieve saved teams';
+  border-radius: 10px;
+  background-color: rgba(9, 57, 67, 0.5);
+  padding: 0.2rem;
+  display: none;
+  position: fixed;
+  font-size: 12px;
+}
+header strong:hover::after {
+  display: inherit;
 }
 
 /* ===================== INPUT ======================= */
@@ -191,6 +204,15 @@ select {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
   border-radius: 10px 10px 0px 0px;
+}
+.teams h5 {
+  background-color: #82aba1;
+  text-align: center;
+  margin-top: -1.5rem;
+  visibility: hidden;
+}
+.teams:hover h5 {
+  visibility: visible;
 }
 .teams-wraper {
   display: flex;

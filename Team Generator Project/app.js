@@ -1,19 +1,3 @@
-/**
- * KNOWN ISSUES
- * ->Shuffle on start
- * ->Interrogants equals nºplayers
- * ->Generate other distributions (bulk, uniform, Nº Teams)
- * 
- * (~v)->dinamic color team change (good but make it better)
- * (~v)->Interrogansts move 
- * 
- * ->Clear modal: cat that eats the screen
- * 
-      // indefined in save + refresh + change team name
-      let teamMemberList = document.querySelectorAll('.team-member-list');
-
- */
-
 let body = document.querySelector('body');
 const retrieve = document.querySelector('header strong');
 
@@ -147,7 +131,7 @@ function addMockTeam() {
     <h4 class="tick"><strong>???</strong></h4>
     <div class="team-member-list">
     <p class="tick"><strong>???</strong></p>
-    </div></article><div></div>`);
+    </div></article>`);
   }
   team.innerHTML = teamDivs.join('');
 
