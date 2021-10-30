@@ -238,8 +238,8 @@ function saveToStorage() {
 // HELPERS --------------------------------------------
 function removeEdit() {
   if (editing) {
-    edited.style.backgroundColor = 'lightgrey';
-    edited.style.color = 'rgb(49, 49, 49)';
+    edited.style.backgroundColor = 'rgb(179, 168, 143)';
+    edited.style.color = 'white';
     edited.readOnly = true;
     editing = false;
     if (edited.value.trim() != '') {
