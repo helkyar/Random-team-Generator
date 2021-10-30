@@ -102,12 +102,12 @@ function editMemb(e) {
 }
 
 function removeMemb(e) {
-  let paragraf = e.target.parentElement;
+  let input = e.target.nextElementSibling;
 
   if (e.target.tagName == 'IMG') {
-    paragraf.remove();
+    e.target.parentElement.remove();
     for (let i = 0; i < membersNames.length; i++) {
-      if (membersNames[i].trim() == paragraf.innerText.trim()) {
+      if (membersNames[i].trim() == input.value.trim()) {
         membersNames.splice(i, 1);
         break;
       }
