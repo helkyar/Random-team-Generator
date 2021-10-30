@@ -128,14 +128,13 @@ select {
   margin-bottom: 0.5rem;
 }
 .start {
-  background-color: #33cc7a;
+  background-color: #ab5664;
 }
 .clear {
-  transition: ease-in  1s transform ;
-  background-color: #0e0d0dad;
+  background-color: #0e0d0dad;  
 }
 .save {
-  background-color: #ab5664;
+  background-color: #33cc7a;
 }
 .saved {
   transition: ease-in-out 1s transform;
