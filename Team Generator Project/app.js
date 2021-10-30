@@ -126,8 +126,7 @@ function addMockTeam() {
   }
 
   for (let i = 0; i < teamNum; i++) {
-    teamDivs.push(`<article class="team team-mock" style="border: 2px solid 
-    #${112141 + 400 * i}; background-color: #${112141 + 400 * i};"> 
+    teamDivs.push(`<article class="team team-mock"> 
     <h4><p class="tick1">?</p><p class="tick2">?</p><p class="tick3">?</p></h4>
     <div class="team-member-list">
     <p class="tick1">?</p><p class="tick2">?</p><p class="tick3">?</p>
@@ -193,8 +192,8 @@ function generateTeams() {
   for (let a = 0; a < membersNames.length; a++) {
     if (Math.floor(a / teamNumb) == 0) {
       team.innerHTML += `<article class="team" 
-      style="border: 2px solid #${112141 + random[a] * (a + 10)};">
-      <h4 style="background-color: #${112141 + random[a] * (a + 10)};">
+      style="border: 2px solid #${829891 + random[a] * (a + 10)};">
+      <h4 style="background-color: #${829891 + random[a] * (a + 10)};">
       ${teamNames ? teamNames[teamRand[a]] : 'Team ' + (a + 1)}</h4>
       <div class="team-member-list">
       <p class="team-member">${membersNames[random[a]]}</p></div></article>`;
