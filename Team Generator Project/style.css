@@ -145,14 +145,14 @@ select {
   font-size: 0.9rem;
 }
 .start {
-  background-color: #343434;
+  background-color: #9d5454;
 }
 .clear {
   transition: ease-in 1s transform;
   background-color: #343434;
 }
 .save {
-  background-color: #343434;
+  background-color: #2f902fc4;
 }
 .saved {
   transition: ease-in-out 1s transform;
