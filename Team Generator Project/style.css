@@ -1,7 +1,7 @@
 /* ==================== GENERAL ====================== */
 body {
   margin: 0;
-  background-color: #7e7e7e3d;
+  background-color: #343434;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -16,7 +16,7 @@ h4 {
 }
 
 header h1 {
-  background-color: #739991;
+  background-color: #343434;
   padding: 2rem;
   margin: 0;
   color: #ffffff;
@@ -54,8 +54,9 @@ header strong {
 header strong::after {
   content: 'retrieve saved teams';
   border-radius: 10px;
-  background-color: rgba(9, 57, 67, 0.5);
-  padding: 0.2rem;
+  background-color: rgba(33, 131, 150, 0.5);
+  padding: 1rem ;
+  margin-left: 20px;
   display: none;
   position: fixed;
   font-size: 12px;
@@ -69,12 +70,12 @@ header strong:hover::after {
   width: 25%;
   flex-grow: 2;
   border-color: black;
-  background-color: #856e72ad;
+  background-color: #d9cab3df;
 }
 .input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #0e0d0dad;
+  background-color: #6D9886;
 
   border-radius: 10px 10px 0px 0px;
 }
@@ -104,11 +105,11 @@ input {
   flex-direction: column;
   align-items: center;
   border-color: black;
-  background-color: #6e999986;
+  background-color: #d9cab3df;
 }
 .controller h3 {
   width: calc(100%);
-  background-color: #2d7a7af5;
+  background-color: #6D9886;
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
@@ -125,7 +126,7 @@ a {
   margin-top: 0.5rem;
   border-radius: 10px;
   border: none;
-  color: white;
+  color: black;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
@@ -144,14 +145,14 @@ select {
   font-size: 0.9rem;
 }
 .start {
-  background-color: #9c4b4b;
+  background-color: #F6F6F6;
 }
 .clear {
   transition: ease-in 1s transform;
-  background-color: #0e0d0dad;
+  background-color: #F6F6F6;
 }
 .save {
-  background-color: #33cc7a;
+  background-color: #F6F6F6;
 }
 .saved {
   transition: ease-in-out 1s transform;
@@ -172,12 +173,12 @@ select {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
-  background-color: #f1d8a0;
+  background-color: #d9cab3df;
 }
 .member-list h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #e9b879;
+  background-color: #6D9886;
   border-radius: 10px 10px 0px 0px;
 }
 .list {
@@ -202,10 +203,10 @@ select {
 /* ===================== TEAMS ======================= */
 .teams {
   width: 100%;
-  background-color: #b0fcc1;
+  background-color: #d9cab3df;
 }
 .teams h3 {
-  background-color: #82aba1;
+  background-color: #6D9886;
   margin: -1rem -2rem 0;
   padding: 2rem 0;
   border-radius: 10px 10px 0px 0px;
