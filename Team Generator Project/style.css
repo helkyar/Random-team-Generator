@@ -137,12 +137,12 @@ select {
 .inf-memb,
 .inf-teams {
   margin: 0.5rem 0 0;
-  padding: 0.5rem;
-  border-radius: 10px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 1px;
   font-size: 0.9rem;
 }
 .start {
-  background-color: #ab5664;
+  background-color: #9c4b4b;
 }
 .clear {
   transition: ease-in 1s transform;
@@ -170,12 +170,12 @@ select {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
-  background-color: #e2b3ba;
+  background-color: #f1d8a0;
 }
 .member-list h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #bd5565;
+  background-color: #e9b879;
   border-radius: 10px 10px 0px 0px;
 }
 .list {
@@ -188,11 +188,12 @@ select {
   margin: 1rem;
 }
 .list input {
+  border: solid 1px #e9b879;
   width: 6rem;
   border-radius: 10px;
   font-weight: bold;
-  background-color: lightgrey;
-  color: rgb(49, 49, 49);
+  background-color: rgb(179, 168, 143);
+  color: white;
   text-align: center;
 }
 
