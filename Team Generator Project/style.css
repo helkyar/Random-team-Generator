@@ -2,24 +2,24 @@
 body {
   margin: 0;
   background-color: #7e7e7e3d;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1,
 h3,
 h4 {
   text-align: center;
 }
-h3 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+h3,
+h4 {
+  color: #ffffff;
 }
 
 header h1 {
-  background-color: #05050554;
+  background-color: #739991;
   padding: 2rem;
   margin: 0;
   color: #ffffff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 p {
   margin-top: 0rem;
@@ -69,12 +69,12 @@ header strong:hover::after {
   width: 25%;
   flex-grow: 2;
   border-color: black;
-  background-color: #b8e1ff;
+  background-color: #7efbe0b9;
 }
 .input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #0a99ff81;
+  background-color: #1ba486c4;
 
   border-radius: 10px 10px 0px 0px;
 }
@@ -103,23 +103,24 @@ input {
   flex-direction: column;
   align-items: center;
   border-color: black;
-  background-color: #b8e1ff;
+  background-color: #aaf3f386;
 }
 .controller h3 {
   width: calc(100%);
-
-  background-color: #0a99ff81;
+  background-color: #51d3d3f5;
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
 }
+
 select {
   border-radius: 10px;
 }
+
 a {
   width: 100%;
   padding: 0.5rem;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   border-radius: 10px;
   border: none;
   color: white;
@@ -135,21 +136,20 @@ select {
 }
 .inf-memb,
 .inf-teams {
-  margin: 0;
-  padding-bottom: 0;
-}
-.inf-memb {
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
 }
 .start {
-  background-color: red;
+  background-color: #33cc7a;
 }
 .clear {
-  transition: transform 1s ease-in;
-  background-color: black;
+  transition: ease-in 1s transform;
+  background-color: #0e0d0dad;
 }
 .save {
-  background-color: green;
+  background-color: #ab5664;
 }
 .saved {
   transition: ease-in-out 1s transform;
@@ -169,12 +169,12 @@ select {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
-  background-color: #e8aeb7;
+  background-color: #e2b3ba;
 }
 .member-list h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #d26071;
+  background-color: #bd5565;
   border-radius: 10px 10px 0px 0px;
 }
 .list {
@@ -192,6 +192,7 @@ select {
   font-weight: bold;
   background-color: lightgrey;
   color: rgb(49, 49, 49);
+  text-align: center;
 }
 
 /* ===================== TEAMS ======================= */
@@ -210,6 +211,7 @@ select {
   text-align: center;
   margin-top: -1.5rem;
   visibility: hidden;
+  color: white;
 }
 .teams:hover h5 {
   visibility: visible;
@@ -255,25 +257,6 @@ h4 {
 }
 
 /* ============================ ANIMATIONS ================================ */
-
-/*span {
-  animation: new 1s infinite;
-  transition: transform 1s ease-in;
-}
-@keyframes new {
-  0% {
-    transform: scale(100);
-  }
-  100% {
-    transform: scale(0);
-  }
-} */
-/* .expand {
-  transform: scale(100);
-}
-.contract {
-  transform: scale(1); 
-}*/
 .team .tick {
   animation: shake 0.5s infinite;
 }
@@ -285,27 +268,15 @@ h4 {
   10% {
     transform: translate(-0.2px, -2px) rotate(-1deg);
   }
-  /* 20% {
-    transform: translate(-1px, 0px) rotate(1deg);
-  } */
   30% {
     transform: translate(1px, 0.5px) rotate(0deg);
   }
-  /* 40% {
-    transform: translate(0.2px, -0.2px) rotate(1deg);
-  } */
   50% {
     transform: translate(-0.2px, 2px) rotate(-1deg);
   }
-  /* 60% {
-    transform: translate(-1px, 0.2px) rotate(0deg);
-  } */
   70% {
     transform: translate(1px, 0.2px) rotate(-1deg);
   }
-  /* 80% {
-    transform: translate(-0.2px, -0.2px) rotate(1deg);
-  } */
   90% {
     transform: translate(0.2px, 0.5px) rotate(0deg);
   }
