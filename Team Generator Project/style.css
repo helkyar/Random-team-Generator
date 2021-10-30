@@ -145,14 +145,14 @@ select {
   font-size: 0.9rem;
 }
 .start {
-  background-color: #9d5454;
+  background-color: #5c2c2c;
 }
 .clear {
   transition: ease-in 1s transform;
   background-color: #343434;
 }
 .save {
-  background-color: #2f902fc4;
+  background-color: #2e3b2b;
 }
 .saved {
   transition: ease-in-out 1s transform;
@@ -212,7 +212,7 @@ select {
   border-radius: 10px 10px 0px 0px;
 }
 .teams h5 {
-  background-color: #6D9886;
+  background-color: #6d9886;
   text-align: center;
   margin-top: -1.5rem;
   visibility: hidden;
