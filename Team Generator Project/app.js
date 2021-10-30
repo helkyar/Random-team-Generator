@@ -3,7 +3,7 @@
  * ->Shuffle on start
  * ->Interrogants equals nºplayers
  * ->Generate other distributions (bulk, uniform, Nº Teams)
- * ->Double click to edit member
+ * ->Double click to edit member -> p to form, update memberNumbers
  * 
  * (~v)->dinamic color team change (good but make it better)
  * (~v)->Interrogansts move 
