@@ -13,9 +13,8 @@
       <h1>Team Generator</h1>
     </header>
     <main>
-      <section class="input">
+      <section class="input">        
         <h3>Input</h3>
-
         <form action="">
           <label for="name">Member name</label>
           <input type="text" id="name" />
@@ -57,7 +56,17 @@
 
       <section class="teams">
         <h3>Generated Teams</h3>
-        <div class="teams-wraper"> </div>
+        <div class="teams-wraper">
+          <article class="team">
+            <h4>Team ${i + 1}</h4>
+            <div class="team-member-list">
+              <p class="team-member"> Juan </p>
+              <p class="team-member"> Jsoa </p>
+              <p class="team-member"> Miguel </p>
+              <p class="team-member"> Javi </p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
     <script src="teamNames.js"></script>

@@ -53,9 +53,7 @@ function removeMemb(e) {
   if (e.target.tagName == 'IMG') {
     paragraf.remove();
   }
-
-  // remove from array, select player
-  infoUpdate(10);
+  addTeam();
 }
 
 function addTeam() {
@@ -82,7 +80,7 @@ function infoUpdate(teamNum) {
   infTeams.innerHTML = `Teams: ${teamNum}`;
 }
 
-// ======================================================
+// ===========================================DRAG AND DROP
 
 let teamMember = document.querySelectorAll('.team-member');
 let body = document.querySelector('body');
@@ -118,6 +116,8 @@ function mousemove(e) {
   let axisX = e.clientX - selX;
   let axisY = e.clientY - selY;
   selected.style.transform = `translateY(${axisY}px) translateX(${axisX}px)`;
+  selected.style.border = 'solid 0.5px #000';
+  selected.style.position = 'sticky';
 }
 
 function remove(e) {
@@ -135,7 +135,9 @@ function removeDoc() {
 
   //avoid console error
   if (selected) {
-    selected.style.transform = `translateY(0px) translateX(0px)`;
+    selected.style.transform = `translateY(0px) translateX(-0.5px)`;
+    selected.style.border = 'none';
+    selected.style.position = 'inherit';
     selected = '';
   }
 

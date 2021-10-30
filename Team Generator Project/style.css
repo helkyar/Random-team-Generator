@@ -34,7 +34,18 @@ main section {
 .input {
   width: 25%;
   flex-grow: 1;
-  border-color: #298332;
+  border-color: black;
+  background-color: #B8E1FF;  
+}
+.input h3{
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  background-color: #0a99ff81;  
+  
+  border-radius: 10px 10px 0px 0px;  
+}
+.input form{
+  margin: 1rem 0;
 }
 label {
   width: 7rem;
@@ -51,7 +62,15 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-color: #934827;
+  border-color: black;
+  background-color: #B8E1FF;
+}
+.controller h3{    
+  width: 10rem;
+  background-color: #0a99ff81;  
+  margin: -1rem 0 0;
+  padding: 2rem 0;
+  border-radius: 10px 10px 0px 0px;  
 }
 a {
   width: 100%;
@@ -62,9 +81,10 @@ a {
   color: white;
   font-weight: bold;
   text-align: center;
+  cursor:pointer;
 }
 a:active {
-  transform: scale(0.99);
+  transform: scale(0.95);
 }
 select {
   margin-top: 1rem;
@@ -92,6 +112,12 @@ select {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
+  background-color: #E8AEB7;
+}
+.member-list h3{
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  background-color: #D26071;
 }
 .list {
   display: flex;
@@ -106,6 +132,7 @@ select {
 /* ===================== TEAMS ======================= */
 .teams {
   width: 100%;
+  background-color: #B0FCC1;
 }
 .teams-wraper {
   display: flex;
@@ -119,8 +146,8 @@ select {
   margin: 0.7rem 0.5rem;
   width: 10%;
   border-radius: 10px;
-  border: 2px solid #612141;
-  background-color: #612141;
+  border: 2px solid #82ABA1;
+  background-color: #82ABA1;
 }
 h4 {
   margin: 0.7rem 0.5rem 0.4rem;
@@ -132,6 +159,14 @@ h4 {
 }
 .team-member {
   cursor: pointer;
+  z-index: 10;
+}
+.unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* ============================ ANIMATIONS ================================ */
