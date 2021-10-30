@@ -193,9 +193,9 @@ function generateTeams() {
   for (let a = 0; a < membersNames.length; a++) {
     if (Math.floor(a / teamNumb) == 0) {
       team.innerHTML += `<article class="team" 
-      style="border: 2px solid #${112141 + random[a] * (a + 10)}; 
-      background-color: #${112141 + random[a] * (a + 10)};">
-      <h4>${teamNames ? teamNames[teamRand[a]] : 'Team ' + (a + 1)}</h4>
+      style="border: 2px solid #${112141 + random[a] * (a + 10)};">
+      <h4 style="background-color: #${112141 + random[a] * (a + 10)};">
+      ${teamNames ? teamNames[teamRand[a]] : 'Team ' + (a + 1)}</h4>
       <div class="team-member-list">
       <p class="team-member">${membersNames[random[a]]}</p></div></article>`;
     } else {
@@ -228,7 +228,7 @@ function saveToStorage() {
     savedMembers += `<div class="member">
       <img src="img/trash.svg" alt="delete" /> <input value="${member}" readonly> </div>`;
   }
-  console.log(savedTeams);
+
   localStorage.setItem('teams', savedTeams ? savedTeams : '');
   localStorage.setItem('members', savedMembers);
   localStorage.setItem('numbTeams', teamDivs.length); //
