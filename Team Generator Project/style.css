@@ -29,6 +29,13 @@ main section {
   border-radius: 10px;
   border: 0.5px solid;
 }
+header strong {
+  margin-left: 1rem;
+  background-color: aqua;
+  border-radius: 50%;
+  padding: 0 1rem;
+  cursor: pointer;
+}
 
 /* ===================== INPUT ======================= */
 .input {
@@ -81,12 +88,25 @@ select {
   background-color: red;
 }
 .clear {
+  transition: transform 1s ease-in;
   background-color: black;
 }
 .save {
   background-color: green;
 }
-
+.saved {
+  transition: ease-in-out 1s transform;
+  padding: 1rem 10rem;
+  border-radius: 10rem;
+  font-weight: bold;
+  position: fixed;
+  top: -5rem;
+  left: calc(45% - 5rem);
+  background-color: lawngreen;
+}
+.show {
+  transform: translateY(10rem);
+}
 /* ====================== LIST ======================= */
 .member-list {
   width: 30%;
@@ -119,8 +139,6 @@ select {
   margin: 0.7rem 0.5rem;
   width: 10%;
   border-radius: 10px;
-  border: 2px solid #612141;
-  background-color: #612141;
 }
 h4 {
   margin: 0.7rem 0.5rem 0.4rem;
@@ -132,6 +150,72 @@ h4 {
 }
 .team-member {
   cursor: pointer;
+  z-index: 10;
+}
+.unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* ============================ ANIMATIONS ================================ */
+
+/*span {
+  animation: new 1s infinite;
+  transition: transform 1s ease-in;
+}
+@keyframes new {
+  0% {
+    transform: scale(100);
+  }
+  100% {
+    transform: scale(0);
+  }
+} */
+.expand {
+  transform: scale(100);
+}
+.contract {
+  transform: scale(1);
+}
+.team .tick {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0.2px, 0.2px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.2px, -2px) rotate(-1deg);
+  }
+  /* 20% {
+    transform: translate(-1px, 0px) rotate(1deg);
+  } */
+  30% {
+    transform: translate(1px, 0.5px) rotate(0deg);
+  }
+  /* 40% {
+    transform: translate(0.2px, -0.2px) rotate(1deg);
+  } */
+  50% {
+    transform: translate(-0.2px, 2px) rotate(-1deg);
+  }
+  /* 60% {
+    transform: translate(-1px, 0.2px) rotate(0deg);
+  } */
+  70% {
+    transform: translate(1px, 0.2px) rotate(-1deg);
+  }
+  /* 80% {
+    transform: translate(-0.2px, -0.2px) rotate(1deg);
+  } */
+  90% {
+    transform: translate(0.2px, 0.5px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.2px, -0.5px) rotate(-1deg);
+  }
+}
