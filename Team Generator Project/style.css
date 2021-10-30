@@ -1,11 +1,25 @@
 /* ==================== GENERAL ====================== */
 body {
   margin: 0;
+  background-color: #7e7e7e3d;
 }
 h1,
 h3,
 h4 {
   text-align: center;
+}
+h3 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header h1 {
+  background-color: #05050554;
+  padding: 2rem;
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 p {
   margin-top: 0rem;
@@ -41,7 +55,18 @@ header strong {
 .input {
   width: 25%;
   flex-grow: 1;
-  border-color: #298332;
+  border-color: black;
+  background-color: #b8e1ff;
+}
+.input h3 {
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  background-color: #0a99ff81;
+
+  border-radius: 10px 10px 0px 0px;
+}
+.input form {
+  margin: 1rem 0;
 }
 label {
   width: 7rem;
@@ -58,7 +83,16 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-color: #934827;
+  border-color: black;
+  background-color: #b8e1ff;
+}
+.controller h3 {
+  width: calc(100%);
+
+  background-color: #0a99ff81;
+  margin: -1rem 0 0;
+  padding: 2rem 2rem;
+  border-radius: 10px 10px 0px 0px;
 }
 a {
   width: 100%;
@@ -69,9 +103,10 @@ a {
   color: white;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
 }
 a:active {
-  transform: scale(0.99);
+  transform: scale(0.95);
 }
 select {
   margin-top: 1rem;
@@ -112,6 +147,13 @@ select {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
+  background-color: #e8aeb7;
+}
+.member-list h3 {
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  background-color: #d26071;
+  border-radius: 10px 10px 0px 0px;
 }
 .list {
   display: flex;
@@ -126,6 +168,13 @@ select {
 /* ===================== TEAMS ======================= */
 .teams {
   width: 100%;
+  background-color: #b0fcc1;
+}
+.teams h3 {
+  background-color: #82aba1;
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  border-radius: 10px 10px 0px 0px;
 }
 .teams-wraper {
   display: flex;
@@ -139,9 +188,13 @@ select {
   margin: 0.7rem 0.5rem;
   width: 10%;
   border-radius: 10px;
+  border: 2px solid #82aba1;
+  background-color: #82aba1;
 }
 h4 {
   margin: 0.7rem 0.5rem 0.4rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .team-member-list {
   text-align: center;

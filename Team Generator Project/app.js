@@ -62,7 +62,7 @@ function getLocalStorage() {
 function addMember(e) {
   e.preventDefault();
 
-  if (nameInput.value != '') {
+  if (nameInput.value.trim() != '') {
     memberList.innerHTML = '';
     membersNames.push(nameInput.value);
 
