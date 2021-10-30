@@ -233,17 +233,20 @@ select {
   width: fit-content;
   min-width: 5rem;
   border-radius: 10px;
-  /* overflow: hidden; */
   border: 2px solid #82aba1;
-  background-color: #82aba1;
+  background-color: white;
 }
 h4 {
+  background-color: #82aba1;
   margin: 0.7rem 0.5rem 0.4rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: -0.1rem -0.1rem 0;
+  padding: 1rem 0.5rem;
+  border-radius: 10px 10px 0px 0px;
 }
+/* FUUUUUUK */
 .team-member-list {
-  height: auto;
   text-align: center;
   background-color: white;
   border-radius: 0px 0px 10px 10px;
