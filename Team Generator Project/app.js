@@ -8,6 +8,9 @@
  * (~v)->Interrogansts move 
  * 
  * ->Clear modal: cat that eats the screen
+ * 
+      // indefined in save + refresh + change team name
+      let teamMemberList = document.querySelectorAll('.team-member-list');
 
  */
 
@@ -17,7 +20,9 @@ const retrieve = document.querySelector('header strong');
 let addButton = document.querySelector('.add');
 let teamSize = document.querySelector('#size');
 let nameInput = document.querySelector('#name');
+let teamLabel = document.querySelector('.change');
 
+let distribution = document.querySelector('#distribution');
 let members = document.querySelector('.inf-memb');
 let infTeams = document.querySelector('.inf-teams');
 const start = document.querySelector('.start');
@@ -31,12 +36,19 @@ let team = document.querySelector('.teams-wraper');
 let membersNames = [];
 let teamDivs = [];
 let savedTeams;
+let teamNumb;
 
 let edited;
 let editing = false;
 let originalName;
 
 getLocalStorage();
+// Make sure is the correct label even if cache isn't refreshed
+if (distribution.value == 'teamnum') {
+  teamLabel.innerText = 'Number of teams';
+} else {
+  teamLabel.innerText = 'Team size';
+}
 
 // =============== LISTENERS ======================================================
 addButton.addEventListener('click', addMember);
@@ -49,6 +61,7 @@ clear.addEventListener('click', clearAll);
 save.addEventListener('click', saveToStorage);
 retrieve.addEventListener('click', getLocalStorage);
 
+distribution.addEventListener('change', newLabel);
 // =============== RETRIEVE ======================================================
 function getLocalStorage() {
   let m = localStorage.getItem('members');
@@ -60,6 +73,7 @@ function getLocalStorage() {
     membersNames = localStorage.getItem('membersNames').split(',');
 
     memberList.innerHTML = m;
+    teamNumb = nT;
     membersNames[0].trim() ? membersNames : (membersNames = []);
     t == '' ? addMockTeam() : (team.innerHTML = t);
     infoUpdate(nT, nM);
@@ -121,8 +135,7 @@ function addMockTeam() {
   // Check for selected distribution
   teamDivs = [];
   let teamNum;
-  let distribution = document.querySelector('#distribution').value;
-  if (distribution == 'teamnum') {
+  if (distribution.value == 'teamnum') {
     teamNum = teamDistribution();
   } else {
     teamNum = noaloneDistribution();
@@ -170,16 +183,28 @@ function teamDistribution() {
   return size;
 }
 
+function newLabel() {
+  if (distribution.value == 'teamnum') {
+    teamLabel.innerText = 'Number of teams';
+  } else {
+    teamLabel.innerText = 'Team size';
+  }
+  teamLabel.classList.add('notify');
+  setTimeout(() => {
+    teamLabel.classList.remove('notify');
+  }, 1000);
+}
 // =============== GENERATE TEAMS ======================================================
 function generateTeams() {
   let teamRand;
+  team.innerHTML = '';
   let teamNames = pickTeamArray();
+  teamDivs.length > 0 ? (teamNumb = teamDivs.length) : '';
+
   if (teamNames) {
-    teamRand = randomArr(teamDivs.length, teamNames.length);
+    teamRand = randomArr(teamNumb, teamNames.length);
   }
   let random = randomArr(membersNames.length, membersNames.length);
-  let teamNumb = teamDivs.length;
-  team.innerHTML = '';
 
   for (let a = 0; a < membersNames.length; a++) {
     if (Math.floor(a / teamNumb) == 0) {

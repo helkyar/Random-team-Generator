@@ -53,7 +53,7 @@ header strong {
 /* ===================== INPUT ======================= */
 .input {
   width: 25%;
-  flex-grow: 1;
+  flex-grow: 2;
   border-color: black;
   background-color: #7efbe0b9;
 }
@@ -71,14 +71,20 @@ label {
   width: 7rem;
   display: inline-block;
   margin-top: 0.7rem;
+  transition: background-color 0.5s ease-out;
+  border-radius: 10px;
+  padding: 0.5rem;
 }
 input {
   margin-top: 1rem;
 }
-
+.notify {
+  background-color: #093943;
+}
 /* ================== CONTROLLER ===================== */
 .controller {
-  width: 15%;
+  width: 15rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +98,9 @@ input {
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
 }
-
+select {
+  border-radius: 10px;
+}
 a {
   width: 100%;
   padding: 0.5rem;
@@ -159,7 +167,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
-  height: 15rem;
+  height: 17rem;
 }
 .member {
   margin: 1rem;
@@ -193,8 +201,10 @@ select {
 }
 .team {
   margin: 0.7rem 0.5rem;
-  width: 10%;
+  width: fit-content;
+  min-width: 5rem;
   border-radius: 10px;
+  overflow: hidden;
   border: 2px solid #82aba1;
   background-color: #82aba1;
 }
@@ -204,6 +214,7 @@ h4 {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .team-member-list {
+  height: 90%;
   text-align: center;
   background-color: white;
   border-radius: 0px 0px 10px 10px;
@@ -234,12 +245,12 @@ h4 {
     transform: scale(0);
   }
 } */
-.expand {
+/* .expand {
   transform: scale(100);
 }
 .contract {
-  transform: scale(1);
-}
+  transform: scale(1); 
+}*/
 .team .tick {
   animation: shake 0.5s infinite;
 }
