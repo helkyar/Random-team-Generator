@@ -1,0 +1,303 @@
+/* ==================== GENERAL ====================== */
+body {
+  margin: 0;
+  background-color: #7e7e7e3d;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1,
+h3,
+h4 {
+  text-align: center;
+}
+h3,
+h4 {
+  color: #ffffff;
+}
+
+header h1 {
+  background-color: #739991;
+  padding: 2rem;
+  margin: 0;
+  color: #ffffff;
+}
+p {
+  margin-top: 0rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+}
+img {
+  cursor: pointer;
+  width: 1rem;
+  margin-bottom: -0.1rem; /* align img with text */
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section {
+  padding: 1rem 2rem 0.5rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  border: 0.5px solid;
+}
+header strong {
+  margin-left: 1rem;
+  background-color: aqua;
+  border-radius: 50%;
+  padding: 0 1rem;
+  cursor: pointer;
+  position: relative;
+}
+header strong::after {
+  content: 'retrieve saved teams';
+  border-radius: 10px;
+  background-color: rgba(9, 57, 67, 0.5);
+  padding: 0.2rem;
+  display: none;
+  position: fixed;
+  font-size: 12px;
+}
+header strong:hover::after {
+  display: inherit;
+}
+
+/* ===================== INPUT ======================= */
+.input {
+  width: 25%;
+  flex-grow: 2;
+  border-color: black;
+  background-color: #7efbe0b9;
+}
+.input h3 {
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  background-color: #1ba486c4;
+
+  border-radius: 10px 10px 0px 0px;
+}
+.input form {
+  margin: 1rem 0;
+}
+label {
+  width: 7rem;
+  display: inline-block;
+  margin-top: 0.7rem;
+  transition: background-color 0.5s ease-out;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+input {
+  margin-top: 1rem;
+}
+.notify {
+  background-color: #093943;
+}
+/* ================== CONTROLLER ===================== */
+.controller {
+  width: 15rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: black;
+  background-color: #aaf3f386;
+}
+.controller h3 {
+  width: calc(100%);
+  background-color: #51d3d3f5;
+  margin: -1rem 0 0;
+  padding: 2rem 2rem;
+  border-radius: 10px 10px 0px 0px;
+}
+
+select {
+  border-radius: 10px;
+}
+
+a {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+a:active {
+  transform: scale(0.95);
+}
+select {
+  margin-top: 1rem;
+}
+.inf-memb,
+.inf-teams {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.start {
+  background-color: #ab5664;
+}
+.clear {
+  transition: ease-in 1s transform;
+  background-color: #0e0d0dad;
+}
+.save {
+  background-color: #33cc7a;
+}
+.saved {
+  transition: ease-in-out 1s transform;
+  padding: 1rem 10rem;
+  border-radius: 10rem;
+  font-weight: bold;
+  position: fixed;
+  top: -5rem;
+  left: calc(45% - 5rem);
+  color: white;
+  background-color: #20ad62;
+}
+.show {
+  transform: translateY(10rem);
+}
+/* ====================== LIST ======================= */
+.member-list {
+  width: 30%;
+  flex-grow: 999;
+  border-color: #093943;
+  background-color: #e2b3ba;
+}
+.member-list h3 {
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  background-color: #bd5565;
+  border-radius: 10px 10px 0px 0px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  height: 17rem;
+}
+.member {
+  margin: 1rem;
+}
+.list input {
+  width: 6rem;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: lightgrey;
+  color: rgb(49, 49, 49);
+  text-align: center;
+}
+
+/* ===================== TEAMS ======================= */
+.teams {
+  width: 100%;
+  background-color: #b0fcc1;
+}
+.teams h3 {
+  background-color: #82aba1;
+  margin: -1rem -2rem 0;
+  padding: 2rem 0;
+  border-radius: 10px 10px 0px 0px;
+}
+.teams h5 {
+  background-color: #82aba1;
+  text-align: center;
+  margin-top: -1.5rem;
+  visibility: hidden;
+  color: white;
+}
+.teams:hover h5 {
+  visibility: visible;
+}
+.teams-wraper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.teams-wraper h3 {
+  display: block;
+}
+.team {
+  margin: 0.7rem 0.5rem;
+  width: fit-content;
+  min-width: 5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #82aba1;
+  background-color: #82aba1;
+}
+h4 {
+  margin: 0.7rem 0.5rem 0.4rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.team-member-list {
+  height: 90%;
+  text-align: center;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+}
+.team-member {
+  cursor: pointer;
+  z-index: 10;
+}
+.unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ============================ ANIMATIONS ================================ */
+.team-mock h4,
+.team-mock .team-member-list {
+  display: flex;
+  text-align: center;
+}
+.team-mock p {
+  font-weight: bold;
+  background-color: rgba(1, 1, 1, 0);
+  margin: 0 auto;
+}
+.tick1 {
+  animation: shake 0.5s infinite 0s;
+}
+.tick2 {
+  animation: shake 0.5s infinite 0.3s;
+}
+.tick3 {
+  animation: shake 0.5s infinite 0.6s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0.2px, 0.2px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.2px, -2px) rotate(-1deg);
+  }
+  30% {
+    transform: translate(1px, 0.5px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-0.2px, 2px) rotate(-1deg);
+  }
+  70% {
+    transform: translate(1px, 0.2px) rotate(-1deg);
+  }
+  90% {
+    transform: translate(0.2px, 0.5px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.2px, -0.5px) rotate(-1deg);
+  }
+}
