@@ -54,7 +54,7 @@ header strong {
 /* ===================== INPUT ======================= */
 .input {
   width: 25%;
-  flex-grow: 1;
+  flex-grow: 2;
   border-color: black;
   background-color: #b8e1ff;
 }
@@ -84,7 +84,8 @@ input {
 }
 /* ================== CONTROLLER ===================== */
 .controller {
-  width: 15%;
+  width: 15rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,6 +99,9 @@ input {
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
+}
+select {
+  border-radius: 10px;
 }
 a {
   width: 100%;
@@ -164,7 +168,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
-  height: 15rem;
+  height: 17rem;
 }
 .member {
   margin: 1rem;

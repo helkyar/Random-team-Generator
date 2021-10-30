@@ -39,7 +39,12 @@ let editing = false;
 let originalName;
 
 getLocalStorage();
-newLabel();
+// Make sure is the correct label even if cache isn't refreshed
+if (distribution.value == 'teamnum') {
+  teamLabel.innerText = 'Number of teams';
+} else {
+  teamLabel.innerText = 'Team size';
+}
 
 // =============== LISTENERS ======================================================
 addButton.addEventListener('click', addMember);
