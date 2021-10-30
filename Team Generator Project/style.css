@@ -2,6 +2,8 @@
 body {
   margin: 0;
   background-color: #7e7e7e3d;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 h1,
 h3,
@@ -9,17 +11,14 @@ h4 {
   text-align: center;
 }
 h3, h4{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color:rgb(255, 255, 255);
+  color:#ffffff;
 }
 
 header h1 {
-  background-color: #05050554;
+  background-color: #739991;
   padding: 2rem;
   margin: 0;
   color: #ffffff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 p {
   margin-top: 0rem;
@@ -56,12 +55,12 @@ header strong {
   width: 25%;
   flex-grow: 1;
   border-color: black;
-  background-color: #b8e1ff;
+  background-color: #7efbe0b9;
 }
 .input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #0a99ff81;
+  background-color: #1ba486c4;
 
   border-radius: 10px 10px 0px 0px;
 }
@@ -84,20 +83,20 @@ input {
   flex-direction: column;
   align-items: center;
   border-color: black;
-  background-color: #b8e1ff;
+  background-color: #aaf3f386;
 }
 .controller h3 {
   width: calc(100%);
-
-  background-color: #0a99ff81;
+  background-color: #51d3d3f5;
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
 }
+
 a {
   width: 100%;
   padding: 0.5rem;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   border-radius: 10px;
   border: none;
   color: white;
@@ -113,22 +112,22 @@ select {
 }
 .inf-memb,
 .inf-teams {
-  margin: 5px;
-  padding: 1rem;
-  border: 1px solid black;
+  margin: 10px;
+  padding: 0.5rem; 
+  border-radius: 0;
 }
 .inf-memb {
   margin-bottom: 0.5rem;
 }
 .start {
-  background-color: red;
+  background-color: #33cc7a;
 }
 .clear {
-  transition: transform 1s ease-in;
-  background-color: black;
+  transition: ease-in  1s transform ;
+  background-color: #0e0d0dad;
 }
 .save {
-  background-color: green;
+  background-color: #ab5664;
 }
 .saved {
   transition: ease-in-out 1s transform;
@@ -148,12 +147,12 @@ select {
   width: 30%;
   flex-grow: 999;
   border-color: #093943;
-  background-color: #e8aeb7;
+  background-color: #e2b3ba;
 }
 .member-list h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #d26071;
+  background-color: #bd5565;
   border-radius: 10px 10px 0px 0px;
 }
 .list {
