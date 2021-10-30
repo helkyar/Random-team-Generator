@@ -17,7 +17,9 @@ const retrieve = document.querySelector('header strong');
 let addButton = document.querySelector('.add');
 let teamSize = document.querySelector('#size');
 let nameInput = document.querySelector('#name');
+let teamLabel = document.querySelector('.change');
 
+let distribution = document.querySelector('#distribution');
 let members = document.querySelector('.inf-memb');
 let infTeams = document.querySelector('.inf-teams');
 const start = document.querySelector('.start');
@@ -37,6 +39,7 @@ let editing = false;
 let originalName;
 
 getLocalStorage();
+newLabel();
 
 // =============== LISTENERS ======================================================
 addButton.addEventListener('click', addMember);
@@ -49,6 +52,7 @@ clear.addEventListener('click', clearAll);
 save.addEventListener('click', saveToStorage);
 retrieve.addEventListener('click', getLocalStorage);
 
+distribution.addEventListener('change', newLabel);
 // =============== RETRIEVE ======================================================
 function getLocalStorage() {
   let m = localStorage.getItem('members');
@@ -121,8 +125,7 @@ function addMockTeam() {
   // Check for selected distribution
   teamDivs = [];
   let teamNum;
-  let distribution = document.querySelector('#distribution').value;
-  if (distribution == 'teamnum') {
+  if (distribution.value == 'teamnum') {
     teamNum = teamDistribution();
   } else {
     teamNum = noaloneDistribution();
@@ -170,6 +173,17 @@ function teamDistribution() {
   return size;
 }
 
+function newLabel() {
+  if (distribution.value == 'teamnum') {
+    teamLabel.innerText = 'Number of teams';
+  } else {
+    teamLabel.innerText = 'Team size';
+  }
+  teamLabel.classList.add('notify');
+  setTimeout(() => {
+    teamLabel.classList.remove('notify');
+  }, 1000);
+}
 // =============== GENERATE TEAMS ======================================================
 function generateTeams() {
   let teamRand;
