@@ -55,8 +55,8 @@ header strong::after {
   content: 'retrieve saved teams';
   border-radius: 10px;
   background-color: rgba(33, 131, 150, 0.5);
-  padding: 1rem ;
-  margin-left: 20px;
+  padding: 0.5rem;
+  margin-left: 1.2rem;
   display: none;
   position: fixed;
   font-size: 12px;
@@ -75,7 +75,7 @@ header strong:hover::after {
 .input h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #6D9886;
+  background-color: #6d9886;
 
   border-radius: 10px 10px 0px 0px;
 }
@@ -109,7 +109,7 @@ input {
 }
 .controller h3 {
   width: calc(100%);
-  background-color: #6D9886;
+  background-color: #6d9886;
   margin: -1rem 0 0;
   padding: 2rem 2rem;
   border-radius: 10px 10px 0px 0px;
@@ -178,7 +178,7 @@ select {
 .member-list h3 {
   margin: -1rem -2rem 0;
   padding: 2rem 0;
-  background-color: #6D9886;
+  background-color: #6d9886;
   border-radius: 10px 10px 0px 0px;
 }
 .list {
@@ -206,7 +206,7 @@ select {
   background-color: #d9cab3df;
 }
 .teams h3 {
-  background-color: #6D9886;
+  background-color: #6d9886;
   margin: -1rem -2rem 0;
   padding: 2rem 0;
   border-radius: 10px 10px 0px 0px;
