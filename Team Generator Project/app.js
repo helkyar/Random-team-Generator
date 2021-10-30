@@ -3,7 +3,6 @@
  * ->Shuffle on start
  * ->Interrogants equals nºplayers
  * ->Generate other distributions (bulk, uniform, Nº Teams)
- * ->Double click to edit member -> p to form, update memberNumbers
  * 
  * (~v)->dinamic color team change (good but make it better)
  * (~v)->Interrogansts move 
@@ -38,7 +37,8 @@ let editing = false;
 let originalName;
 
 getLocalStorage();
-// -------------------------------------------
+
+// =============== LISTENERS ======================================================
 addButton.addEventListener('click', addMember);
 memberList.addEventListener('dblclick', editMemb);
 memberList.addEventListener('click', removeMemb);
@@ -48,8 +48,8 @@ start.addEventListener('click', generateTeams);
 clear.addEventListener('click', clearAll);
 save.addEventListener('click', saveToStorage);
 retrieve.addEventListener('click', getLocalStorage);
-// ======================================================
 
+// =============== RETRIEVE ======================================================
 function getLocalStorage() {
   let m = localStorage.getItem('members');
 
@@ -66,6 +66,7 @@ function getLocalStorage() {
   }
 }
 
+// =============== LIST EDIT ======================================================
 function addMember(e) {
   e.preventDefault();
 
@@ -117,17 +118,14 @@ function removeMemb(e) {
 }
 
 function addMockTeam() {
-  let size = 2;
+  // Check for selected distribution
   teamDivs = [];
-  let extraMemb = membersNames.length % size;
-
-  teamSize.value > 2 ? (size = teamSize.value) : '';
-  teamSize.value = size; //show it to the user
-
-  let teamNum = Math.ceil(membersNames.length / size);
-
-  if ((extraMemb != 1 || extraMemb <= teamNum - 1) && extraMemb != 0) {
-    teamNum--;
+  let teamNum;
+  let distribution = document.querySelector('#distribution').value;
+  if (distribution == 'teamnum') {
+    teamNum = teamDistribution();
+  } else {
+    teamNum = noaloneDistribution();
   }
 
   for (let i = 0; i < teamNum; i++) {
@@ -143,6 +141,36 @@ function addMockTeam() {
   infoUpdate(teamNum);
 }
 
+function noaloneDistribution() {
+  let size = 2;
+  let extraMemb = membersNames.length % size;
+
+  teamSize.value > 2 ? (size = teamSize.value) : '';
+
+  let teamNum = Math.ceil(membersNames.length / size);
+
+  if ((extraMemb != 1 || extraMemb <= teamNum - 1) && extraMemb != 0) {
+    teamNum--;
+  }
+  return teamNum;
+}
+
+function teamDistribution() {
+  let size = 1;
+  if (membersNames.length > 1) {
+    let max = Math.floor(membersNames.length / 2);
+
+    teamSize.value < 1
+      ? ''
+      : teamSize.value > max
+      ? (size = max)
+      : (size = teamSize.value);
+  }
+
+  return size;
+}
+
+// =============== GENERATE TEAMS ======================================================
 function generateTeams() {
   let teamRand;
   let teamNames = pickTeamArray();
@@ -173,6 +201,7 @@ function generateTeams() {
   initializeDrag(teamMember);
 }
 
+// =============== CONTROLLER =========================================================
 function clearAll() {
   membersNames = [];
   team.innerHTML = '';
