@@ -1,3 +1,10 @@
+/**
+ *  Too many globlals 
+ *  better variable names
+ *  minimal inline css
+ *  nicer html injection
+ *  simpler ternary operators
+ */
 let body = document.querySelector('body');
 const retrieve = document.querySelector('header strong');
 
